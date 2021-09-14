@@ -1,0 +1,1 @@
+print("Sebi e nesimtit si nu imi arata deloc caracatita de dimensiuni mici")
