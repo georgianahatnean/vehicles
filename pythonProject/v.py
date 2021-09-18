@@ -1,10 +1,9 @@
 class Person:
-    def __init__(self, first_name, family_name, age, country, role):
+    def __init__(self, first_name, family_name, age, country):
         self.first_name = first_name
         self.family_name = family_name
         self.age = age
         self.country = country
-        self.role = role
 
 
 class Vehicles:
@@ -42,5 +41,12 @@ def paymethod(value):
             paymethod(value)
     else:
         print("Unknown payment method")
-car1 = Vehicles("car", "golf", 2011, "black", "manual", "diesel", 4500)
-car1.ceva()
+
+f = open('vehicles_data.txt', 'r')
+x = f.readlines()
+for item in x:
+    y = item.split()
+    v_type, mark, year, colour, gearbox, fuel_type, price = y
+    vehicle = Vehicles(v_type, mark, year, colour, gearbox, fuel_type, price)
+    vehicle.ceva()
+f.close()
