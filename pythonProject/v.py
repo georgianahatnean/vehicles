@@ -5,6 +5,9 @@ class Person:
         self.age = age
         self.country = country
 
+    def details(self):
+        print("My name is ", self.first_name, self.family_name)
+        print("I am " + self.age + " years old and i am from ", self.country)
 
 class Vehicles:
     def __init__(self, v_type, mark, year, colour, gearbox, fuel_type, price):
@@ -42,11 +45,27 @@ def paymethod(value):
     else:
         print("Unknown payment method")
 
-f = open('vehicles_data.txt', 'r')
-x = f.readlines()
-for item in x:
-    y = item.split()
-    v_type, mark, year, colour, gearbox, fuel_type, price = y
-    vehicle = Vehicles(v_type, mark, year, colour, gearbox, fuel_type, price)
-    vehicle.ceva()
-f.close()
+g = open('peoples_data.txt', 'r')
+z = g.readlines()
+for element in z:
+    w = element.split()
+    first_name, family_name, age, country = w
+    people = Person(first_name, family_name, age, country)
+    people.details()
+    f = open('vehicles_data.txt', 'r')
+    x = f.readlines()
+    ok = 0
+    while ok==0:
+        for item in x:
+            y = item.split()
+            v_type, mark, year, colour, gearbox, fuel_type, price = y
+            vehicle = Vehicles(v_type, mark, year, colour, gearbox, fuel_type, price)
+            vehicle.ceva()
+            mes=int(input("do you want this vehicle? " 
+                          "1-YES " 
+                          "2-NO : "))
+            if mes==1:
+                ok=1
+                break
+    f.close()
+g.close()
