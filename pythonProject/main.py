@@ -1,1 +1,1 @@
-print("Sebi e nesimtit si nu imi arata deloc caracatita de dimensiuni mici")
+print("Sebi is insensitive and doesn't show me the small octopus at all")
